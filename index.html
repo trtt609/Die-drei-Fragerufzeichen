@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Die drei Fragerufzeichen</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body id="main">
+    <div class="MenuIconContainer" onclick="ChangeMenuIcon(this), openCloseNavBar()" id="MenuIconContainer">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div id="sidenav" class="sidenav">
+      <a href="#home">Home</a>
+      <a href="#ÜberUns" onclick="openCloseNavBar(), resetMenuIcon()" >Über&nbsp;uns</a>
+      <a href="archiv.html" onclick="openCloseNavBar()">Archiv</a>
+      <a href="#Kontakt" onclick="openCloseNavBar">Kontakt</a>
+    </div>
+
+
+
+    <script>
+    function ChangeMenuIcon() {
+      var element = document.getElementById("MenuIconContainer");
+      element.classList.toggle("change");
+    }
+    </script>
+    <script>
+      function openCloseNavBar() {
+        var element = document.getElementById("sidenav");
+        element.classList.toggle("open");
+      }
+    </script>
+    <script>
+      function resetMenuIcon(){
+        var element = document.getElementById("MenuIconContainer");
+        element.classList.remove("change");
+
+      }
+    </script>
+
+
+    <script>
+      function myToggle(){
+        var element = document.getElementById("flip-card-inner");
+        element.classList.toggle("flipped");
+      }
+    </script>
+
+
+    <div id="home" style="height: 100%;" >
+      <div class="flip-card" id="flip-card">
+        <div class="flip-card-inner" id="flip-card-inner" onclick="myToggle()">
+          <div class="flip-card-front">
+            <h1>
+              <span style="color: var(--color-justus)"> &#8253;</span>
+              <span style="color: var(--color-peter)"> &#8253;</span>
+              <span style="color: var(--color-bob)"> &#8253;</span>
+            </h1>
+            <p> Die Drei Fragerufzeichen</p>
+          </div>
+
+          <div class="flip-card-back">
+            <table style="width: 95%; margin:auto; margin: 10px;">
+              <tr>
+                <th> Die Drei Detektive</td>
+                <th style="text-align: right;">
+                  <span style="color: var(--color-justus)"> &#8253;</span>
+                  <span style="color: var(--color-peter)"> &#8253;</span>
+                  <span style="color: var(--color-bob)"> &#8253;</span>
+                </td>
+              </tr>
+              <tr>
+                <td> Wir übernehmen jeden Fall!</td>
+                <td></td>
+              </tr>
+            </table>
+            <div class="row">
+              <div class="left-container">
+              <p class="text-detective">  Erster Detektiv</p><p class="text-detective-name">Justus Jonas</p>
+              <p class="text-detective"> Zweiter Detektiv</p><p class="text-detective-name">Peter Shaw</span><br>
+              <p class="text-detective"> Recherche & Archiv</p><p class="text-detective-name">Bob Andrews</span>
+              </div>
+              <div class="right-container">
+                <p class="text-contact"> Kontakt:</p>
+                <p class="text-contact-info">
+                  Straße in Bielefeld Nr.<br>
+                  336xx Bielefeld<br>
+                  E-Mail: die-drei@detektive.de<br>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="Kontakt" style="height: 100%;">
+    
+
+      <h1> Kontakt-Information</h1>
+    </div>
+
+    
+
+    <script>
+      function openText(i){ 
+        if (i == "justus") {
+          var element = document.getElementById("textJustus");
+          element.classList.toggle("openText");
+        } else if (i == "peter"){
+          var element = document.getElementById("textPeter");
+          element.classList.toggle("openText");
+        } else if (i== "bob") {
+          var element = document.getElementById("textBob");
+          element.classList.toggle("openText");
+        } else {};
+      };
+    </script>
+
+    <div id="ÜberUns" style="height: 100%;" >
+      <h1>Über Uns</h1>
+      <div class="containerCircles">
+        <div class="justus" onclick="openText('justus')">Justus</div>
+        <div class="peter" onclick="openText('peter')">Peter</div>
+        <div class="bob" onclick="openText('bob')">Bob</div>
+      </div>
+      <div class="containerTextDetektiv" id="containerTextDetektiv">
+        <div class="justusText" id="textJustus">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque omnis corporis error eveniet, natus temporibus repudiandae nemo nesciunt labore necessitatibus asperiores iure eum voluptates illo tempore hic consectetur sit obcaecativ
+        </div>
+        <div class="peterText" id="textPeter">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam officia eaque sed dolore asperiores expedita fugit sunt incidunt ipsam, nam quod totam explicabo similique! Modi beatae laborum quae unde velit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis a rem aspernatur nostrum perferendis voluptatem in eos, quia, quisquam quibusdam veniam ipsa provident, sed numquam animi harum nesciunt maiores at.
+        </div>
+        <div class="bobText" id="textBob">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque omnis corporis error eveniet, natus temporibus repudiandae nemo nesciunt labore necessitatibus asperiores iure eum voluptates illo tempore hic consectetur sit obcaecati
+        </div>
+      </div>
+    </div>
+    <div id="News" style="height: 100%;">
+
+      <div>News</div>
+        <div class="loaderCircle"></div>
+        <div class="loaderBar"></div>
+        <div class="loaderFragerufzeichen">&#8253; &#8253; &#8253;</div>
+        <h1>text</h1>
+    </div>
+  </body>
+</html>

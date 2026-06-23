@@ -1,0 +1,272 @@
+:root {
+  --color-justus: rgb(255, 255, 255);
+  --color-peter: rgb(0, 96, 168);
+  --color-bob: rgb(227, 27, 35);
+}
+
+h1 {
+  text-decoration: none;
+}
+body {
+  background-color: black;
+  color: whitesmoke;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
+/* Visitenkarte */
+.flip-card {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  perspective: 1000px;
+  width: 500px;
+  height: 302px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover {
+  border: 0.5px solid red;
+}
+
+/* .flip-card-inner:hover{
+  transform: rotateY(180deg);
+} */
+
+.flipped{
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  text-align: center;
+}
+.flip-card-front h1 {
+  font-size: 1000%;
+  padding-top: 0;
+  margin: 30px;
+}
+.flip-card-front p{
+  font-size: 150%;
+}
+
+.flip-card-back {
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Rückseite der Visitenkarte  */
+table {
+  text-align: left;
+}
+.text-detective {
+  font-size: large;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  padding-top: 10px;
+  margin: 2px;
+}
+.text-contact {
+  font-size: large;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  padding-top: 10px;
+  margin: 2px;
+}
+.text-detective-name {
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  font-style: italic;
+}
+.text-contact-info {
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+}
+
+.left-container {
+  width: 50%;
+  float: left;
+  padding: 15px;
+}
+.right-container {
+  width: 40%;
+  padding-top: 15px;
+  float: left;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+th {
+  border-bottom: 1px solid whitesmoke;
+  font-size: 30px;
+}
+
+/* Side Navigation */
+.sidenav {
+  height: 150px;
+  width: 0;
+  position: fixed;
+  top: 30px;
+  right: 0;
+  padding-top: 50px;
+  z-index: 1;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+}
+.open {
+  width: 100px;
+}
+.sidenav a {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  color: whitesmoke;
+}
+.sidenav a:hover {
+  color:  rgb(0, 96, 168);
+}
+
+.sidenav .closebtn {
+  position: relative;
+  float: right;
+  top: 0;
+  right: 25px;
+  margin-left: 50px;
+}
+#main {
+  transition: marging-right 0.5s;
+  padding: 16px;
+}
+.MenuIconContainer {
+  cursor: pointer;
+  position: fixed;
+  right: 10px;
+  z-index: 2;
+}
+
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+/* Skript */
+ul{
+  list-style-type: none;
+}
+ul .speaker{
+  color: red;
+}
+td{
+  vertical-align: top;
+}
+
+/* Über Uns */
+.containerCircles{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-inline: 50px;
+  position: relative;
+  top: 20%;
+}
+.containerCircles div{
+  border: 1px solid;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+}
+
+.containerCircles div:hover{ 
+  opacity: 90%;
+}
+.containerCircles .justus{
+  border-color: var(--color-justus);
+}
+.containerCircles .peter{
+  border-color: var(--color-peter);
+}
+.containerCircles .bob{
+  border-color: var(--color-bob);
+}
+.containerCircles .justus:hover{
+  background-color: var(--color-justus);
+  color: #333;
+}
+.containerCircles .peter:hover{
+  background-color: var(--color-peter);
+}
+.containerCircles .bob:hover{
+  background-color: var(--color-bob);
+}
+
+.containerTextDetektiv{
+  height: 250px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  top: 20%;
+  transition: 0.5s;
+}
+.justusText, .peterText, .bobText {
+  transition: 0.5s;
+  overflow: hidden;
+  height: 0;
+}
+
+.justusText {
+  color: #333;
+  background-color: var(--color-justus);
+}
+.peterText {
+  background-color: var(--color-peter);
+}
+.bobText {
+  background-color: var(--color-bob);
+}
+
+.openText{
+  height: 100%;
+}
